@@ -16,9 +16,5 @@ export const routes: Routes = [
     {
         path: 'Historial',
         loadComponent:() => import('./component/historial/historial.component').then(m => m.HistorialComponent) 
-    },
-    {
-        path: 'Editar',
-        loadComponent:() => import('./component/editar/editar.component').then(m => m.EditarComponent) 
     }
 ];

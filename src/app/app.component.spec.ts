@@ -25,6 +25,6 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     await fixture.whenStable(); // Espera a que las promesas se resuelvan
-    expect(compiled.querySelector('h1')?.textContent).toContain('PruebaFront');
+    expect(compiled.querySelector('title')?.textContent).toContain('PruebaFront');
   });
 });

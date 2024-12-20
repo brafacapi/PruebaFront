@@ -34,6 +34,9 @@ export class GestionesComponent {
         this.gestiones = gestionesGuardadas ? JSON.parse(gestionesGuardadas) : [];
     }
 
+
+
+    
     // Opciones principales
     tipoGestionOptions = ['Buena', 'Pendiente', 'Fraude'];
 
