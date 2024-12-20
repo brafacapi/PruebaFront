@@ -20,10 +20,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('PruebaFront');
   });
 
-  it('should render title', () => {
+  it('should render title', async () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, PruebaFront');
+    await fixture.whenStable(); // Espera a que las promesas se resuelvan
+    expect(compiled.querySelector('h1')?.textContent).toContain('PruebaFront');
   });
 });

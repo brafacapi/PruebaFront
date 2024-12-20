@@ -1,0 +1,28 @@
+<div class="form-container">
+    <h1>Formulario de Gestiones</h1>
+    <form (ngSubmit)="onSubmit()" class="contact-form">
+  
+      <!-- Campo de alerta -->
+      <label for="alerta">Alerta:</label>
+      <input type="text" id="alerta" name="alerta" [(ngModel)]="alerta" required>
+  
+      <!-- Campo Tipo de Gestión -->
+      <label for="tipoGestion">Tipo de Gestión: (selecciona una opción)</label>
+      <select id="tipoGestion" name="tipoGestion" [(ngModel)]="tipoGestion" (change)="onTipoGestionChange()" required>
+        <option *ngFor="let option of tipoGestionOptions" [value]="option">{{ option }}</option>
+      </select>
+  
+      <!-- Campo Detalle de Gestión -->
+      <label for="detalleGestion">Detalle de Gestión: (Selecciona una opción)</label>
+      <select id="detalleGestion" name="detalleGestion" [(ngModel)]="detalleGestion" required>
+        <option *ngFor="let option of detalleGestionOptions" [value]="option">{{ option }}</option>
+      </select>
+  
+      <!-- Campo Resumen -->
+      <label for="resumenGestion">Resumen de la gestión realizada:</label>
+      <input type="text" id="resumenGestion" name="resumenGestion" [(ngModel)]="resumenGestion" required>
+  
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+  </div>
+  

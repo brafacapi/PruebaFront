@@ -1,0 +1,82 @@
+:host {
+    background: #f4f4f9;
+    left: 0;
+    width: 100vw;
+    height: 2,5em;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    
+    
+  .grid-container {
+    
+    width: 100%;
+    
+  }
+  .grid-logo {
+    background-image: url("/Nombre.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 10em;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1.4em;
+    font-size: 1.2em;
+    grid-row: 1;
+    min-width: 180px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 255);
+    color: rgb(116, 114, 114);
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
+    grid-row: 1;
+  }
+  .cont{
+    background-color: black;
+    text-align: center;
+    height: 8em;
+    width: 100vw;
+}
+.logo {
+    width: 4em;
+}
+.button-menu {
+    
+    vertical-align: middle;
+    margin-top: 1em;
+    text-decoration: none;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    height: 100%; /* Asegura que ocupe todo el alto del contenedor */
+    margin-right: 5em;
+    color: rgb(161, 159, 159);
+}
+
+.button-menu:hover {
+    color: rgb(8, 8, 8); /* Color letra*/
+    text-decoration: none;
+    transform: scale(1.10);
+}
+.button-row {
+    margin: center;
+    text-align: center;
+    min-width: 400px;
+  
+}
+.navFooter{
+    background-color: rgb(172, 172, 172);
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0%;
+    height: 5em ;
+}
+
+.footer {
+    position: relative;
+    color: white;
+}
+}

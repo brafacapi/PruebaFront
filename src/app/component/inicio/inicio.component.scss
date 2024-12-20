@@ -1,0 +1,49 @@
+:host {
+    background: #f4f4f9;
+    left: 0;
+    width: 100vw;
+    top: 0;
+    z-index: 0;
+
+    .Container {
+        background: #f4f4f9;
+        min-height: 100px;
+        /* Hace que el contenedor ocupe toda la altura de la ventana */
+    }
+
+    .Container2 {
+        display: flex;
+        flex-direction: column;
+        /* Apila los elementos verticalmente */
+        justify-content: center;
+        /* Centra verticalmente */
+        align-items: center;
+        /* Centra horizontalmente */
+        text-align: center;
+        /* Alinea el texto al centro */
+        padding: 2rem;
+        flex-direction: column;
+        background-color: #f4f4f9;
+        /* Fondo claro y suave */
+    }
+
+    .Container2 h1 {
+        font-size: 2.5rem;
+        /* Tamaño grande para destacar */
+        color: #333;
+        /* Texto oscuro */
+        margin-bottom: 1rem;
+        /* Espaciado entre el h1 y el h4 */
+    }
+
+    .Container2 h4 {
+        font-size: 1.2rem;
+        /* Tamaño menor pero legible */
+        color: #555;
+        /* Color de texto ligeramente más claro */
+        line-height: 1.6;
+        /* Espaciado entre líneas */
+        max-width: 600px;
+        /* Limita el ancho del texto para facilitar la lectura */
+    }
+}

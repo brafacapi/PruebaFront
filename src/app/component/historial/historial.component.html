@@ -1,0 +1,12 @@
+<div class="list-container">
+    <h1>Historial de Gestiones</h1>
+    <ul>
+      <li *ngFor="let gestion of gestiones">
+        <strong>Alerta:</strong> {{ gestion.alerta }} |
+        <strong>Tipo de Gestión:</strong> {{ gestion.tipoGestion }} |
+        <strong>Detalle:</strong> {{ gestion.detalleGestion }} |
+        <strong>Resumen:</strong> {{ gestion.resumenGestion }}
+      </li>
+    </ul>
+    <p *ngIf="gestiones.length === 0">No hay gestiones almacenadas.</p>
+  </div>
