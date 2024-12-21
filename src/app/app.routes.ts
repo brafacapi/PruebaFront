@@ -5,6 +5,8 @@ export const routes: Routes = [
         path: '',
         loadComponent:() => import('./component/inicio/inicio.component').then(m => m.InicioComponent) 
     },
+   
+    
     {
         path: 'Inicio',
         loadComponent:() => import('./component/inicio/inicio.component').then(m => m.InicioComponent) 
@@ -16,5 +18,9 @@ export const routes: Routes = [
     {
         path: 'Historial',
         loadComponent:() => import('./component/historial/historial.component').then(m => m.HistorialComponent) 
-    }
+    },
+    {
+        path: '**',
+        loadComponent:() => import('./component/inicio/inicio.component').then(m => m.InicioComponent) 
+    },
 ];

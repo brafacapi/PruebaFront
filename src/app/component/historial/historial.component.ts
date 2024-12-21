@@ -24,7 +24,11 @@ export class HistorialComponent implements OnInit {
       if (storedData) {
         // Parsear los datos almacenados como un arreglo
         const parsedData = JSON.parse(storedData);
-        this.gestiones = Array.isArray(parsedData) ? parsedData : [parsedData];
+        
+        // Si 'gestiones' ya tiene datos, combinamos con los nuevos sin sobrescribir
+        this.gestiones = Array.isArray(parsedData) 
+          ? [...this.gestiones, ...parsedData] // Añadir nuevos datos al arreglo existente
+          : [...this.gestiones, parsedData]; // Si solo es un objeto, lo agregamos al arreglo
       }
     } else {
       console.warn('localStorage no está disponible en este entorno.');

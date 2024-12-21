@@ -4,46 +4,62 @@
     width: 100vw;
     top: 0;
     z-index: 0;
-
-    .Container {
-        background: #f4f4f9;
-        min-height: 100px;
-        /* Hace que el contenedor ocupe toda la altura de la ventana */
-    }
-
-    .Container2 {
-        display: flex;
-        flex-direction: column;
-        /* Apila los elementos verticalmente */
-        justify-content: center;
-        /* Centra verticalmente */
-        align-items: center;
-        /* Centra horizontalmente */
-        text-align: center;
-        /* Alinea el texto al centro */
-        padding: 2rem;
-        flex-direction: column;
-        background-color: #f4f4f9;
-        /* Fondo claro y suave */
-    }
-
-    .Container2 h1 {
-        font-size: 2.5rem;
-        /* Tamaño grande para destacar */
-        color: #333;
-        /* Texto oscuro */
-        margin-bottom: 1rem;
-        /* Espaciado entre el h1 y el h4 */
-    }
-
-    .Container2 h4 {
-        font-size: 1.2rem;
-        /* Tamaño menor pero legible */
-        color: #555;
-        /* Color de texto ligeramente más claro */
-        line-height: 1.6;
-        /* Espaciado entre líneas */
-        max-width: 600px;
-        /* Limita el ancho del texto para facilitar la lectura */
-    }
-}
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenido ocupe toda la altura de la pantalla */
+  }
+  
+  /* Contenedor principal que ocupa toda la pantalla menos el footer */
+  .Container {
+    flex-grow: 1; /* Hace que este contenedor ocupe el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 2rem; /* Añadimos padding alrededor del contenido */
+  }
+  
+  /* Segundo contenedor con estilos centrados */
+  .Container2 {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+    background-color: #f4f4f9; /* Fondo claro */
+    max-width: 800px; /* Limita el ancho máximo para mejorar la legibilidad */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  }
+  
+  /* Título principal */
+  .Container2 h1 {
+    font-size: 2.5rem; /* Tamaño grande para destacar */
+    color: #333; /* Texto oscuro */
+    margin-bottom: 1rem; /* Espaciado entre el h1 y el h4 */
+  }
+  
+  /* Subtítulo */
+  .Container2 h4 {
+    font-size: 1.2rem; /* Tamaño menor pero legible */
+    color: #555; /* Color de texto ligeramente más claro */
+    line-height: 1.6; /* Espaciado entre líneas */
+    max-width: 600px; /* Limita el ancho del texto para facilitar la lectura */
+    margin-bottom: 2rem; /* Añadimos un pequeño margen inferior */
+  }
+  
+  /* Estilos del footer */
+  .navFooter {
+    background-color: rgb(172, 172, 172);
+    width: 100%;
+    text-align: center;
+    position: relative; /* El footer estará al final, sin superponerse al contenido */
+    bottom: 0;
+    height: 5em;
+    display: flex;
+    justify-content: center; /* Centra el contenido dentro del footer */
+    align-items: center; /* Asegura que el texto esté centrado verticalmente */
+    color: white;
+    z-index: 1;
+    padding: 1rem; /* Añade espacio dentro del footer */
+  }
+  
