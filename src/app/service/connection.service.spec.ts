@@ -4,21 +4,19 @@ import { ConnectionService } from './connection.service';
 
 describe('ConnectionService', () => {
   let service: ConnectionService;
-  let httpMock: HttpTestingController; // Para interceptar las solicitudes HTTP
-
-  // Configuración de la prueba
+  let httpMock: HttpTestingController; 
+   
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], // Importa HttpClientTestingModule para interceptar las peticiones
-      providers: [ConnectionService] // Proveedor del servicio que vamos a probar
+      imports: [HttpClientTestingModule],
+      providers: [ConnectionService] 
     });
     service = TestBed.inject(ConnectionService);
-    httpMock = TestBed.inject(HttpTestingController); // Accede a HttpTestingController
+    httpMock = TestBed.inject(HttpTestingController); 
   });
-
-  // Limpieza después de cada prueba
+  
   afterEach(() => {
-    httpMock.verify(); // Verifica que no haya solicitudes HTTP pendientes
+    httpMock.verify(); 
   });
 
   it('should be created', () => {
@@ -28,31 +26,31 @@ describe('ConnectionService', () => {
   it('should fetch data from the API (GET)', () => {
     const mockData = { key: 'value' };
 
-    // Llamada al método del servicio
+   
     service.getData().subscribe((data) => {
-      expect(data).toEqual(mockData); // Compara la respuesta con los datos simulados
+      expect(data).toEqual(mockData); 
     });
 
-    // Simula la respuesta HTTP
+    
     const req = httpMock.expectOne('http://localhost:3000/api/data');
-    expect(req.request.method).toBe('GET'); // Verifica que la solicitud sea de tipo GET
-    req.flush(mockData); // Responde con los datos simulados
+    expect(req.request.method).toBe('GET');
+    req.flush(mockData);
   });
 
   it('should add data to the API (POST)', () => {
     const newData = { key: 'newValue' };
     const mockResponse = { success: true };
 
-    // Llamada al método del servicio
+    
     service.addData(newData).subscribe((response) => {
-      expect(response).toEqual(mockResponse); // Compara la respuesta con los datos simulados
+      expect(response).toEqual(mockResponse); 
     });
 
     // Simula la respuesta HTTP
     const req = httpMock.expectOne('http://localhost:3000/api/data');
-    expect(req.request.method).toBe('POST'); // Verifica que la solicitud sea de tipo POST
-    expect(req.request.body).toEqual(newData); // Verifica que los datos enviados sean los correctos
-    req.flush(mockResponse); // Responde con los datos simulados
+    expect(req.request.method).toBe('POST'); 
+    expect(req.request.body).toEqual(newData); 
+    req.flush(mockResponse); 
   });
 
   it('should update data on the API (PUT)', () => {
@@ -60,30 +58,28 @@ describe('ConnectionService', () => {
     const mockResponse = { success: true };
     const id = 1;
 
-    // Llamada al método del servicio
+   
     service.updateData(id, updatedData).subscribe((response) => {
-      expect(response).toEqual(mockResponse); // Compara la respuesta con los datos simulados
+      expect(response).toEqual(mockResponse); 
     });
 
-    // Simula la respuesta HTTP
+   
     const req = httpMock.expectOne(`http://localhost:3000/api/data/${id}`);
-    expect(req.request.method).toBe('PUT'); // Verifica que la solicitud sea de tipo PUT
-    expect(req.request.body).toEqual(updatedData); // Verifica que los datos enviados sean los correctos
-    req.flush(mockResponse); // Responde con los datos simulados
+    expect(req.request.method).toBe('PUT'); 
+    expect(req.request.body).toEqual(updatedData);
+    req.flush(mockResponse); 
   });
 
   it('should delete data from the API (DELETE)', () => {
     const mockResponse = { success: true };
     const id = 1;
 
-    // Llamada al método del servicio
     service.deleteData(id).subscribe((response) => {
-      expect(response).toEqual(mockResponse); // Compara la respuesta con los datos simulados
+      expect(response).toEqual(mockResponse); 
     });
 
-    // Simula la respuesta HTTP
     const req = httpMock.expectOne(`http://localhost:3000/api/data/${id}`);
-    expect(req.request.method).toBe('DELETE'); // Verifica que la solicitud sea de tipo DELETE
-    req.flush(mockResponse); // Responde con los datos simulados
+    expect(req.request.method).toBe('DELETE');
+    req.flush(mockResponse); 
   });
 });
