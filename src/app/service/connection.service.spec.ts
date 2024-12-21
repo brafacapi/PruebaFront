@@ -57,19 +57,14 @@ describe('ConnectionService', () => {
     const updatedData = { key: 'updatedValue' };
     const mockResponse = { success: true };
     const id = 1;
-
-   
     service.updateData(id, updatedData).subscribe((response) => {
       expect(response).toEqual(mockResponse); 
     });
-
-   
     const req = httpMock.expectOne(`http://localhost:3000/api/data/${id}`);
     expect(req.request.method).toBe('PUT'); 
     expect(req.request.body).toEqual(updatedData);
     req.flush(mockResponse); 
   });
-
   it('should delete data from the API (DELETE)', () => {
     const mockResponse = { success: true };
     const id = 1;
@@ -77,7 +72,6 @@ describe('ConnectionService', () => {
     service.deleteData(id).subscribe((response) => {
       expect(response).toEqual(mockResponse); 
     });
-
     const req = httpMock.expectOne(`http://localhost:3000/api/data/${id}`);
     expect(req.request.method).toBe('DELETE');
     req.flush(mockResponse); 
